@@ -26,7 +26,7 @@
     <div class="container">
       <div class="row">
         <div id="pdf-wrapper">
-          <input type="text" name="5GK5Ad8pqroa" value="">
+          <input type="text" hidden name="5GK5Ad8pqroa" value="">
         </div>
       </div>
     </div>
@@ -46,8 +46,8 @@
             pdf.getPage(i).then((page) => {
               const canvas = document.createElement('canvas');
               canvas.id = i;
-              // document.getElementById('pdf-wrapper').appendChild(canvas);
-              $("pdf-wrapper").append(canvas);
+              document.getElementById('pdf-wrapper').appendChild(canvas);
+
               pdf.getPage(i).then((page) => {
                 renderPage(page, canvas);
                 }
