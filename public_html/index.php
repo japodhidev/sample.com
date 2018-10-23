@@ -1,8 +1,8 @@
 <?php
-$dbname = 'test_db';
+$dbname = 'test';
 $host = '127.0.0.1';
 $username = 'root';
-$pwd = 'qwerty';
+$pwd = '';
 
 // phpinfo();
 //echo "test<br />";
