@@ -48,13 +48,19 @@
               canvas.id = i;
               document.getElementById('pdf-wrapper').appendChild(canvas);
 
-              pdf.getPage(i).then((page) => {
-                renderPage(page, canvas);
-                }
-              );
-            });
-          }
-      });
+                //renderPage(page, canvas);
+		const viewport = page.getViewport(1);
+	        const canvasContext = canvas.getContext('2d');
+	        const renderContext = {
+	          canvasContext,
+	          viewport
+	        };
+	        canvas.height = viewport.height;
+	        canvas.width = viewport.width;
+        	page.render(renderContext);
+      	});
+	}
+	});
 
       function renderPage(page, canvas) {
         const viewport = page.getViewport(1);
